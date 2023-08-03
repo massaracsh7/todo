@@ -10,15 +10,19 @@ type Todo = {
 
 interface Props {
   tasks: Array<Todo>;
+  checkTask: (id: Todo['id']) => void;
+  deleteTask: (id: Todo['id']) => void;
 }
 
-export default function TodoList({ tasks }: Props) {
+export default function TodoList({ tasks, checkTask, deleteTask }: Props) {
   return (
     <ul className='todo__list'>
       {tasks.map((task) => {
         return (
           <TodoItem task={task}
             key={task.id}
+            checkTask={checkTask}
+            deleteTask={deleteTask}
           />
         );
       })}
