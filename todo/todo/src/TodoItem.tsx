@@ -8,15 +8,18 @@ type Todo = {
 
 interface Props {
   task: Todo;
+  checkTask: (id: Todo['id']) => void;
+  deleteTask: (id: Todo['id']) => void;
 }
 
-export default function TodoItem({ task }: Props) {
+export default function TodoItem({ task, checkTask, deleteTask }: Props) {
   let nameLi = 'todo__item';
   if (task.check) {
     nameLi += ' done';
   }
   return (
     <li className={nameLi}
+      onClick={() => checkTask(task.id)}
     >
       <span style={{
         textDecoration: task.check ? 'line-through' : 'none'
@@ -24,7 +27,11 @@ export default function TodoItem({ task }: Props) {
       >
         {task.text}
       </span>
-
+      <button className='btn-delete' onClick={(e) => {
+        e.stopPropagation();
+        deleteTask(task.id)
+      }
+      }>X</button>
     </li>
   )
 }
