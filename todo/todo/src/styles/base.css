@@ -9,3 +9,14 @@ body {
   font-weight: 700;
 }
 
+button {
+  padding: 10px;
+  background-color: #fff;
+}
+
+input {
+  padding: 10px;
+  border-radius: 5px;
+  width: 500px;
+  color: grey;
+}

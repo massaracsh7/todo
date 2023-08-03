@@ -1,0 +1,71 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 100px;
+}
+
+.header {
+  color: lightblue;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.todo__list {
+  background-color: #fff;
+  width: 1024px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+li {
+  list-style-type: none;
+}
+
+.todo__item {
+  position: relative;
+  color: lightblue;
+  border-bottom: 1px solid black;
+  padding: 20px 0 20px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.todo__item:before {
+  content: '';
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  background-image: url('../assets/icon.svg');
+  background-repeat: no-repeat;
+  left: 10px;
+}
+
+.done {
+  color: red;
+}
+
+.done:before {
+  background-image: url('../assets/icon--red.svg');
+}
+
+
+.btn-delete {
+  border: none;
+  color: grey;
+}
+
+.btn-delete:hover {
+  color: red;
+}
+
+.btn-add {
+  border-radius: 5px;
+}
+
+.btn-add:hover {
+  background-color: lightblue;
+}
